@@ -5,6 +5,7 @@ public void setup()
 {
   size(500,500);
 }
+
 public void draw()
 {
   background(255);
@@ -13,7 +14,8 @@ public void draw()
   int y = 0;
   sierpinski(x, y, len);
 }
-public void mouseDragged()//optional
+
+public void mouseDragged()
 {
   if(prevMouseX < mouseX){
     len+=2;
@@ -23,6 +25,7 @@ public void mouseDragged()//optional
   
   prevMouseX = mouseX;
 }
+
 public void sierpinski(int x, int y, int len) 
 {
   if(len <= 20){

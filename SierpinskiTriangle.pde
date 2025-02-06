@@ -1,3 +1,6 @@
+int len = 500;
+int prevMouseX = 0;
+
 public void setup()
 {
   size(500,500);
@@ -8,15 +11,17 @@ public void draw()
   strokeWeight(3);
   int x = 0;
   int y = 0;
-  int len = 500;
   sierpinski(x, y, len);
-  stroke(255,255,0);
-  fill(255,255,0);
-  ellipse(250,500,25,25);
 }
 public void mouseDragged()//optional
 {
-
+  if(prevMouseX < mouseX){
+    len+=2;
+  } else {
+    len-=2;
+  }
+  
+  prevMouseX = mouseX;
 }
 public void sierpinski(int x, int y, int len) 
 {
@@ -32,16 +37,14 @@ public void sierpinski(int x, int y, int len)
     stroke(156, 25, 29);
     fill(156, 25, 29);
     ellipse(x,y,15,15);
-
+    stroke(255,255,0);
+    fill(255,255,0);
 
   }
 }
 
-void shapeSketch0() {
-  stroke(255, 235, 3);
-  rect(293.0, 440.0, 0.0, 0.0);
-  rect(201.0, 365.0, 92.0, 92.0);
-}
+
+
 
 
 
